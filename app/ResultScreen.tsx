@@ -24,6 +24,12 @@ const ResultScreen = () => {
     Linking.openURL(url);
   };
 
+  // Function to handle logout and navigate back to the index page
+  const handleLogout = () => {
+    // Navigate back to the home or index page, adjust the path as needed
+    router.replace('/'); // Change the path as per your index page route
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -84,7 +90,7 @@ const ResultScreen = () => {
             <Ionicons name="search" size={24} color="#3498db" />
           </TouchableOpacity>
         </Link>
-        <TouchableOpacity style={styles.footerItem}>
+        <TouchableOpacity style={styles.footerItem} onPress={handleLogout}>
           <Text style={styles.logoutText}>LOG OUT</Text>
         </TouchableOpacity>
       </View>
